@@ -8,16 +8,16 @@ public class FifthChallenge {
     public static void main(String[] args) {
         int number = 1;
 
-        while (number<=10){
+        while (number<=100){
             if (condition(number)) {
                 System.out.println(number + " is even");
             } else {
-                System.out.println(number + " is even");
+                System.out.println(number + " is odd");
             }
             number++;
         }
     }
-    
+
     public static boolean condition(int number){
         IntPredicate isEven = x-> x%2 ==0;
         return isEven.test(number);
