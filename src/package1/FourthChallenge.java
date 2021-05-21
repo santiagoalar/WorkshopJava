@@ -5,14 +5,18 @@
 package package1;
 
 import java.util.Scanner;
+import java.util.function.Function;
 
 public class FourthChallenge {
-    public void CalcularIva(){
-        Scanner entry = new Scanner(System.in);
-        System.out.println("Enter the radius ");
-    }
 
     public static void main(String[] args) {
+        Scanner entry = new Scanner(System.in);
+        System.out.println("Enter the price of your product ");
+        double priceProduct = entry.nextDouble();
+
+        Function<Double, Double> taxCalculator = x-> x*1.21;
+
+        System.out.println("Final price is " + taxCalculator.apply(priceProduct));
 
     }
 }
