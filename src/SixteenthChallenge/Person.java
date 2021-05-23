@@ -1,5 +1,7 @@
 package SixteenthChallenge;
 
+import java.lang.reflect.Array;
+import java.util.Random;
 import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 
@@ -11,6 +13,7 @@ public class Person {
     private char genre = 'H';
     private double weight = 0;
     private double height = 0;
+    private final String[] LETTERS = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j"};
 
     public Person() {
     }
@@ -67,6 +70,22 @@ public class Person {
         return  predicate.test(genre);
     }
 
+    //generaDNI(): genera un número aleatorio de 8 cifras, genera a partir de este su número su
+    //letra correspondiente. Este método será invocado cuando se construya el objeto. Puedes
+    //dividir el método para que te sea más fácil. No será visible al exterior.
+    //Métodos set de cada parámetro, excepto de DNI.
+
+    private String generaDNI(){
+        String dni;
+        int dniNumbers = (int) (Math.random()*100000000);
+        dni = LETTERS[getFirstNumber(dniNumbers)] + String.valueOf(dniNumbers);
+        return dni;
+    }
+
+    private int getFirstNumber(int dniNumbers){
+        int numberForPosition =  dniNumbers/10000000;
+        return numberForPosition;
+    }
 
     public String getName() {
         return name;
@@ -86,10 +105,6 @@ public class Person {
 
     public int getDni() {
         return dni;
-    }
-
-    public void setDni(int dni) {
-        this.dni = dni;
     }
 
     public char getGenre() {
@@ -114,5 +129,17 @@ public class Person {
 
     public void setHeight(float height) {
         this.height = height;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", dni=" + dni +
+                ", genre=" + genre +
+                ", weight=" + weight +
+                ", height=" + height +
+                '}';
     }
 }
