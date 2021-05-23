@@ -17,13 +17,28 @@ public class Main {
         System.out.println("Bienvenido!! \nIngrese su nombre: ");
         String name = entry.nextLine();
         System.out.println("Ingrese su edad: ");
-        int age = entry.nextInt();
+        byte age = entry.nextByte();
         System.out.println("Ingrese su genero(H/M): ");
         String genreString = entry.nextLine();
         char genre = genreString.charAt(0);
         System.out.println("Ingrese su peso(Kg): ");
-        double weight = entry.nextDouble();
+        float weight = entry.nextFloat();
         System.out.println("Ingrese su altura(Kg): ");
-        double height = entry.nextDouble();
+        float height = entry.nextFloat();
+
+        Person person1 = new Person(name, age, genre, weight, height);
+
+        Person person2 = new Person(name, age, genre);
+        person2.setHeight(70);
+        person2.setHeight(180);
+
+        Person person3 = new Person();
+        person3.setName("Andres");
+        person3.setAge((byte) 20);
+        person3.setGenre('H');
+        person3.setWeight(80);
+        person3.setHeight(171);
+
+        
     }
 }

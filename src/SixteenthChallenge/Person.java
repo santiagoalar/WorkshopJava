@@ -1,7 +1,5 @@
 package SixteenthChallenge;
 
-import java.lang.reflect.Array;
-import java.util.Random;
 import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 
@@ -9,25 +7,27 @@ public class Person {
     //nombre, edad, DNI, sexo (H hombre, M mujer), peso y altura.
     private String name = "";
     private byte age = 0;
-    private int dni;
+    private String dni;
     private char genre = 'H';
     private double weight = 0;
     private double height = 0;
     private final String[] LETTERS = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j"};
 
     public Person() {
+        this.dni = generaDNI();
     }
 
     public Person(String name, byte age, char genre) {
         this.name = name;
         this.age = age;
         this.genre = genre;
+        this.dni = generaDNI();
     }
 
-    public Person(String name, byte age, int dni, char genre, float weight, float height) {
+    public Person(String name, byte age, char genre, float weight, float height) {
         this.name = name;
         this.age = age;
-        this.dni = dni;
+        this.dni = generaDNI();
         this.genre = genre;
         this.weight = weight;
         this.height = height;
@@ -103,7 +103,7 @@ public class Person {
         this.age = age;
     }
 
-    public int getDni() {
+    public String getDni() {
         return dni;
     }
 
