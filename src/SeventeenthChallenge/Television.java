@@ -7,8 +7,8 @@ public class Television extends Electrodomestico {
     //•	Sus atributos son resolución (en pulgadas) y sintonizador TDT (booleano), además de los atributos heredados.
     //•	Por defecto, la resolución será de 20 pulgadas y el sintonizador será false.
     // Attributes
-    double resolution = 20;
-    boolean hasTdt = false;
+    private double resolution = 20;
+    private boolean hasTdt = false;
 
     //•	Los constructores que se implementarán serán:
     //•	Un constructor por defecto.

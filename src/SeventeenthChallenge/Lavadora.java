@@ -9,7 +9,7 @@ public class Lavadora extends Electrodomestico {
     // de la clase padre.
 
     //Attributes
-    double carga = 5;
+    private double carga = 5;
 
     public Lavadora() {
 
