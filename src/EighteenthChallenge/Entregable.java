@@ -8,7 +8,8 @@
 package EighteenthChallenge;
 
 public interface Entregable {
-    boolean entregar();
-    boolean devolver();
+    void entregar();
+    void devolver();
+    boolean isEntregado();
     int compareTo (Object a);
 }

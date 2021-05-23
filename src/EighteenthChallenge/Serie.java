@@ -1,6 +1,6 @@
 package EighteenthChallenge;
 
-public class Serie {
+public class Serie implements Entregable{
     //•	Sus atributos son título, numero de temporadas, entregado, género y creador.
     //•	Por defecto, el número de temporadas es de 3 temporadas y entregado false.
     // El resto de atributos serán valores por defecto según el tipo del atributo.
@@ -80,5 +80,25 @@ public class Serie {
                 ", genero='" + genero + '\'' +
                 ", creador='" + creador + '\'' +
                 '}';
+    }
+
+    @Override
+    public void entregar() {
+        this.entregado=true;
+    }
+
+    @Override
+    public void devolver() {
+        this.entregado=false;
+    }
+
+    @Override
+    public boolean isEntregado(){
+        return this.entregado;
+    }
+
+    @Override
+    public int compareTo(Object a) {
+        return 0;
     }
 }

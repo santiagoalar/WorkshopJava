@@ -83,13 +83,18 @@ public class VideoJuego implements Entregable {
     }
 
     @Override
-    public boolean entregar() {
-        return false;
+    public void entregar() {
+        this.entregado = true;
     }
 
     @Override
-    public boolean devolver() {
-        return false;
+    public void devolver() {
+        this.entregado = false;
+    }
+
+    @Override
+    public boolean isEntregado(){
+        return this.entregado;
     }
 
     @Override
