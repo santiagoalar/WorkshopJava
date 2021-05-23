@@ -68,7 +68,9 @@ Los métodos que se implementaran son:
 
 calcularIMC(): calculara si la persona está en su peso ideal (peso en kg/(altura^2  en m)),
 si esta fórmula devuelve un valor menor que 20, la función devuelve un -1, si devuelve un
-número entre 20 y 25 (incluidos), significa que está por debajo de su peso ideal la función devuelve un 0  y si devuelve un valor mayor que 25 significa que tiene sobrepeso, la función devuelve un 1. Te recomiendo que uses constantes para devolver estos valores.
+número entre 20 y 25 (incluidos), significa que está por debajo de su peso ideal la función
+devuelve un 0  y si devuelve un valor mayor que 25 significa que tiene sobrepeso, la función
+devuelve un 1. Te recomiendo que uses constantes para devolver estos valores.
 
 esMayorDeEdad(): indica si es mayor de edad, devuelve un booleano.
 comprobarSexo(char sexo): comprueba que el sexo introducido es correcto. Si no es correcto,

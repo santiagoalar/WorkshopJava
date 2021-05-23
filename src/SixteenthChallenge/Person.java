@@ -42,7 +42,7 @@ public class Person {
     public int calcularIMC(){
         int answer;
         double imcAnswer;
-        imcAnswer = this.weight/(Math.pow(this.weight, 2));
+        imcAnswer = this.weight/(Math.pow(this.height, 2));
         answer = checkImcAnswer(imcAnswer);
         return answer;
     }
@@ -58,9 +58,9 @@ public class Person {
     }
 
     //esMayorDeEdad(): indica si es mayor de edad, devuelve un booleano.
-    public boolean esMayorDeEdad(byte age){
+    public boolean esMayorDeEdad(){
         IntPredicate predicate = x -> x>18;
-        return predicate.test(age);
+        return predicate.test(this.age);
     }
 
     //comprobarSexo(char sexo): comprueba que el sexo introducido es correcto. Si no es correcto,
