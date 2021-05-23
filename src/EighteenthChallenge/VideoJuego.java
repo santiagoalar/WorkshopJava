@@ -5,11 +5,11 @@ public class VideoJuego implements Entregable {
     //•	Por defecto, las horas estimadas serán de 10 horas y entregado false.
     // El resto de atributos serán valores por defecto según el tipo del atributo.
     //Attributes
-    String titulos = "";
-    int horasEstimadas = 10;
-    boolean entregado = false;
-    String genero = "";
-    String compania = "";
+    private String titulos = "";
+    private int horasEstimadas = 10;
+    private boolean entregado = false;
+    private String genero = "";
+    private String compania = "";
 
     //•	Los constructores que se implementaran serán:
     //•	Un constructor por defecto.

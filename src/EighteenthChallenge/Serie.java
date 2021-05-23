@@ -6,11 +6,11 @@ public class Serie implements Entregable{
     // El resto de atributos serán valores por defecto según el tipo del atributo.
 
     //Attributes
-    String titulo = "";
-    int numTemp = 3;
-    boolean entregado = false;
-    String genero = "";
-    String creador = "";
+    private String titulo = "";
+    private int numTemp = 3;
+    private boolean entregado = false;
+    private String genero = "";
+    private String creador = "";
 
     //Constructors
     //•	Los constructores que se implementarán serán:
@@ -26,7 +26,7 @@ public class Serie implements Entregable{
         this.creador = creador;
     }
 
-    public Serie(String titulo, int numTemp, String genero, String creador) {
+    public Serie(String titulo, String creador, int numTemp, String genero) {
         this.titulo = titulo;
         this.numTemp = numTemp;
         this.genero = genero;
