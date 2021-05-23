@@ -99,6 +99,14 @@ public class Serie implements Entregable{
 
     @Override
     public int compareTo(Object a) {
-        return 0;
+        int valueA = (int)a;
+        int totalTempo = this.numTemp;
+        int answer;
+        if(valueA > totalTempo){
+            answer = valueA;
+        }else {
+            answer=totalTempo;
+        }
+        return answer;
     }
 }
