@@ -1,11 +1,15 @@
 package SeventeenthChallenge;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Electrodomestico {
     //Attributes
     int precioBase = 100;
     String color = "blanco"; //blancos, negro, rojo, azul y gris.
     char consumeEner = 'F'; //A o F
     double peso = 5;
+    String[] colors = {"blanco", "negro", "rojo", "azul", "gris"};
 
     //el color será blanco, el consumo energético será F, el precioBase es de 100 € y el peso de 5 kg.
     // Usa constantes para ello.
@@ -24,6 +28,7 @@ public class Electrodomestico {
         this.consumeEner = consumeEner;
         this.peso = peso;
         comprobarConsumoEnergetico(consumeEner);
+        comprobarColor(color);
     }
 
     //Methods
@@ -36,8 +41,9 @@ public class Electrodomestico {
 
     private void comprobarConsumoEnergetico(char letra){
         boolean answer = false;
+        String letraString = String.valueOf(letra);
         for (Consumo c : Consumo.values()) {
-            if (c.name().equals(letra)) {
+            if (c.name().equals(letraString)) {
                 answer = true;
             }
         }
@@ -47,13 +53,36 @@ public class Electrodomestico {
     }
 
     public void comprobarColor(String color){
-
-        String colorEnter = this.color;
-        //colo
+        boolean answer = false;
+        for (String c : colors) {
+            if (c.equals(color)) {
+                answer = true;
+            }
+        }
+        if(!answer){
+            this.color = "blanco";
+        }
     }
 
-    public void precioFinal(){
+    public int precioFinal(){
+        return this.precioBase + increaseDueConsume(this.consumeEner) + increaseDueWeight(this.peso);
+    }
 
+    private static int increaseDueConsume(char consumeEner){
+        String typeConsume = String.valueOf(consumeEner);
+        int precio = Consumo.valueOf(typeConsume).getConsumo();
+        return precio;
+    }
+    private static int increaseDueWeight(Double peso){
+        int precio = 100;
+        if(peso<19){
+            precio = 10;
+        }else if(peso<49){
+            precio = 50;
+        }else if(peso<79){
+            precio = 80;
+        }
+        return precio;
     }
 
     public int getPrecioBase() {
