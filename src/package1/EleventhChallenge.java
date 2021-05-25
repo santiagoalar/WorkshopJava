@@ -53,15 +53,15 @@ public class EleventhChallenge {
     }*/
 
     public static List<Character> convertStringToCharList(String str) {
-        //List<Character> chars = str.chars().mapToObj(e -> (char) e) collect(Collectors.toList());
+        List<Character> chars = str.chars().mapToObj(e -> (char) e).collect(Collectors.toList());
         // Create an empty List of character
-        List<Character> chars = str
+        //List<Character> chars = str
                 // Convert to String to IntStream
-                .chars()
+                //.chars()
                 // Convert IntStream to Stream<Character>
-                .mapToObj(e -> (char) e)
+                //.mapToObj(e -> (char) e)
                 // Collect the elements as a List Of Characters
-                .collect(Collectors.toList());
+                //.collect(Collectors.toList());
         // return the List
         return chars;
     }
