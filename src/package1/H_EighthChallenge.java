@@ -20,10 +20,10 @@ public class H_EighthChallenge {
         //checkWeekDay(date, isWeekDay);
         switch (date){
             case "lunes": case "martes": case "miércoles": case "jueves": case "viernes":
-                System.out.println(date + "is a weekday, time to go back to work");
+                System.out.println(date + " is a weekday, time to go back to work");
                 break;
             case "sábado": case "sabado": case "domingo":
-                System.out.println(date + "is a weekend day, let's go to the party!");
+                System.out.println(date + " is a weekend day, let's go to the party!");
                 break;
             default:
                 System.out.println(date + " is not a day of the week");
