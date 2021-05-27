@@ -20,6 +20,7 @@ public class Person {
         this.age = age;
         this.genre = genre;
         this.dni = generaDNI();
+        comprobarSexo(genre);
     }
 
     public Person(String name, byte age, char genre, float weight, float height) {
@@ -29,6 +30,7 @@ public class Person {
         this.genre = genre;
         this.weight = weight;
         this.height = height;
+        comprobarSexo(genre);
     }
 
     //Methods
@@ -49,7 +51,7 @@ public class Person {
     }
 
     private void comprobarSexo(char genre) {
-        this.genre = (genre == 'H' || genre == 'M' )? 'H': genre;
+        this.genre = (genre == 'H' || genre == 'M' )? genre:'H';
     }
 
     private String generaDNI() {
