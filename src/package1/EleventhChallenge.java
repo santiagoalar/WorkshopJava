@@ -8,20 +8,18 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class EleventhChallenge {
-    public static long countA;
-    public static long countE;
-    public static long countI;
-    public static long countO;
-    public static long countU;
+    static long countA;
+    static long countE;
+    static long countI;
+    static long countO;
+    static long countU;
 
     public static void main(String[] args) {
         Scanner entry = new Scanner(System.in);
         System.out.println("Please, enter a phrase: ");
         String phrase = entry.nextLine();
         phrase = phrase.toLowerCase();
-        /*for (int i = 0; i < phrase.length(); i++) {
-            checkVowels(phrase.charAt(i));
-        }*/
+
         List<Character> chars = convertStringToCharList(phrase);
         checkVowels2(chars);
         displayResults(phrase);
@@ -32,41 +30,11 @@ public class EleventhChallenge {
         System.out.println("a total: " + countA + "\ne total: " + countE + "\ni total: " + countI + "\no total: " + countO + "\nu total: " + countU);
     }
 
-    /*public static void checkVowels(char char1) {
-        switch (char1) {
-            case 'a':
-                countA++;
-                break;
-            case 'e':
-                countE++;
-                break;
-            case 'i':
-                countI++;
-                break;
-            case 'o':
-                countO++;
-                break;
-            case 'u':
-                countU++;
-                break;
-        }
-    }*/
-
     public static List<Character> convertStringToCharList(String str) {
-        List<Character> chars = str.chars().mapToObj(e -> (char) e).collect(Collectors.toList());
-        // Create an empty List of character
-        //List<Character> chars = str
-                // Convert to String to IntStream
-                //.chars()
-                // Convert IntStream to Stream<Character>
-                //.mapToObj(e -> (char) e)
-                // Collect the elements as a List Of Characters
-                //.collect(Collectors.toList());
-        // return the List
-        return chars;
+        return str.chars().mapToObj(e -> (char) e).collect(Collectors.toList());
     }
 
-    public static void checkVowels2(List<Character> lista){
+    public static void checkVowels2(List<Character> lista) {
         countA = lista.stream().filter(x -> x.equals('a')).count();
         countE = lista.stream().filter(x -> x.equals('e')).count();
         countI = lista.stream().filter(x -> x.equals('i')).count();
