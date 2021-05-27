@@ -4,7 +4,7 @@ package package1;
 
 import java.util.Scanner;
 
-public class FourteenthChallenge {
+public class N_FourteenthChallenge {
     public static void main(String[] args) {
         Scanner entry = new Scanner(System.in);
         System.out.println("Enter a number: ");

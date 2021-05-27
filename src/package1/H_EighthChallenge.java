@@ -5,7 +5,7 @@ package package1;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class EighthChallenge {
+public class H_EighthChallenge {
     public static void main(String[] args) {
         String dateEnter;
         Scanner entry = new Scanner(System.in);

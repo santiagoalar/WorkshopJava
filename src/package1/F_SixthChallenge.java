@@ -3,7 +3,7 @@ package package1;
 
 import java.util.function.IntPredicate;
 
-public class SixthChallenge {
+public class F_SixthChallenge {
     public static void main(String[] args) {
         for (int i = 0; i < 100; i++) {
             if (condition(i)) {

@@ -7,7 +7,7 @@ package package1;
 import java.util.Scanner;
 import java.util.function.Function;
 
-public class FourthChallenge {
+public class D_FourthChallenge {
 
     public static void main(String[] args) {
         Scanner entry = new Scanner(System.in);

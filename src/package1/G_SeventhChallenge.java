@@ -5,7 +5,7 @@ package package1;
 
 import java.util.Scanner;
 
-public class SeventhChallenge {
+public class G_SeventhChallenge {
     public static void main(String[] args) {
         int number;
         Scanner entry = new Scanner(System.in);

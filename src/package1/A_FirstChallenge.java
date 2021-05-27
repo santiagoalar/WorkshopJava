@@ -3,7 +3,7 @@
 // para comprobar que funciona.
 package package1;
 
-public class FirstChallenge {
+public class A_FirstChallenge {
     public static void main(String[] args) {
         int number1 = 23;
         byte number2 = 127;

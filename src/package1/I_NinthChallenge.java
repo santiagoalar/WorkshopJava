@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public class NinthChallenge {
+public class I_NinthChallenge {
     public static void main(String[] args) {
         String phrase = " La sonrisa sera la mejor arma contra la tristeza";
         List<Character> listString = convertStringToCharList(phrase);

@@ -19,7 +19,7 @@ package package1;
 
 import java.util.Scanner;
 
-public class FifteenthChallenge {
+public class O_FifteenthChallenge {
     public static void main(String[] args) {
         showMenu();
     }

@@ -4,7 +4,7 @@ package package1;
 
 import java.util.Scanner;
 
-public class TwelfthChallenge {
+public class L_TwelfthChallenge {
     public static void main(String[] args) {
         Scanner entry = new Scanner(System.in);
         System.out.println("Please, enter any word");

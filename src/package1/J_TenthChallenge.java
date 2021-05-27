@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public class TenthChallenge {
+public class J_TenthChallenge {
 
     public static void main(String[] args) {
         Scanner entry = new Scanner(System.in);

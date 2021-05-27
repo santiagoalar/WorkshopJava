@@ -2,11 +2,10 @@
 //formato (AAAA/MM/DD) (HH:MM:SS)
 package package1;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class ThirteenthChallenge {
+public class M_ThirteenthChallenge {
     public static void main(String[] args) {
         LocalDateTime actualTime = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("(yyyy/MM/dd) (HH:mm:ss)");

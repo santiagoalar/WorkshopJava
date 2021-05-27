@@ -4,7 +4,7 @@ package package1;
 
 import java.util.Scanner;
 
-public class SecondChallenge {
+public class B_SecondChallenge {
     public static void main(String[] args) {
         int number1;
         int number2;

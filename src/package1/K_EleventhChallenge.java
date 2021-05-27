@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public class EleventhChallenge {
+public class K_EleventhChallenge {
     static long countA;
     static long countE;
     static long countI;

@@ -4,7 +4,7 @@ package package1;
 
 import java.util.function.IntPredicate;
 
-public class FifthChallenge {
+public class E_FifthChallenge {
     public static void main(String[] args) {
         int number = 1;
 
