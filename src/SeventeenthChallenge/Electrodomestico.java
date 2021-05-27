@@ -1,18 +1,14 @@
 package SeventeenthChallenge;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 public class Electrodomestico {
     //Attributes
-    int precioBase = 100;
-    String color = "blanco"; //blancos, negro, rojo, azul y gris.
-    char consumeEner = 'F'; //A o F
-    double peso = 5;
-    String[] colors = {"blanco", "negro", "rojo", "azul", "gris"};
-
-    //el color será blanco, el consumo energético será F, el precioBase es de 100 € y el peso de 5 kg.
-    // Usa constantes para ello.
+    protected int precioBase = 100;
+    protected String color = "blanco"; //blancos, negro, rojo, azul y gris.
+    protected char consumeEner = 'F'; //A o F
+    protected double peso = 5;
+    private String[] colors = {"blanco", "negro", "rojo", "azul", "gris"};
 
     //Constructors
     public Electrodomestico() {}
@@ -40,25 +36,14 @@ public class Electrodomestico {
     // y según su tamaño, también. Esta es la lista de precios:
 
     private void comprobarConsumoEnergetico(char letra){
-        boolean answer = false;
-        String letraString = String.valueOf(letra);
-        for (Consumo c : Consumo.values()) {
-            if (c.name().equals(letraString)) {
-                answer = true;
-            }
-        }
+        boolean answer = Arrays.stream(Consumo.values()).anyMatch(x -> x.name().equals(Character.toString(letra)));
         if(!answer){
             this.consumeEner = 'F';
         }
     }
 
     public void comprobarColor(String color){
-        boolean answer = false;
-        for (String c : colors) {
-            if (c.equals(color)) {
-                answer = true;
-            }
-        }
+        boolean answer = Arrays.stream(colors).anyMatch(x->x.equalsIgnoreCase(color));
         if(!answer){
             this.color = "blanco";
         }
@@ -70,8 +55,7 @@ public class Electrodomestico {
 
     private static int increaseDueConsume(char consumeEner){
         String typeConsume = String.valueOf(consumeEner);
-        int precio = Consumo.valueOf(typeConsume).getConsumo();
-        return precio;
+        return Consumo.valueOf(typeConsume).getConsumo();
     }
     private static int increaseDueWeight(Double peso){
         int precio = 100;
@@ -89,31 +73,16 @@ public class Electrodomestico {
         return precioBase;
     }
 
-    public void setPrecioBase(int precioBase) {
-        this.precioBase = precioBase;
-    }
-
     public String getColor() {
         return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
     }
 
     public char getConsumeEner() {
         return consumeEner;
     }
 
-    public void setConsumeEner(char consumeEner) {
-        this.consumeEner = consumeEner;
-    }
-
     public double getPeso() {
         return peso;
     }
 
-    public void setPeso(double peso) {
-        this.peso = peso;
-    }
 }
