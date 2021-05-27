@@ -1,9 +1,6 @@
 package EighteenthChallenge;
 
 public class Serie implements Entregable{
-    //•	Sus atributos son título, numero de temporadas, entregado, género y creador.
-    //•	Por defecto, el número de temporadas es de 3 temporadas y entregado false.
-    // El resto de atributos serán valores por defecto según el tipo del atributo.
 
     //Attributes
     private String titulo = "";
@@ -11,12 +8,6 @@ public class Serie implements Entregable{
     private boolean entregado = false;
     private String genero = "";
     private String creador = "";
-
-    //Constructors
-    //•	Los constructores que se implementarán serán:
-    //•	Un constructor por defecto.
-    //•	Un constructor con el titulo y creador. El resto por defecto.
-    //•	Un constructor con todos los atributos, excepto de entregado.
 
     public Serie() {
     }
@@ -32,12 +23,6 @@ public class Serie implements Entregable{
         this.genero = genero;
         this.creador = creador;
     }
-
-    //•	Los métodos que se implementara serán:
-    //•	Métodos get de todos los atributos, excepto de entregado.
-    //•	Métodos set de todos los atributos, excepto de entregado.
-    //•	Sobrescribe los métodos toString.
-
 
     public String getTitulo() {
         return titulo;

@@ -1,9 +1,6 @@
 package EighteenthChallenge;
 
 public class VideoJuego implements Entregable {
-    //•	Sus atributos son titulo, horas estimadas, entregado, genero y compañia.
-    //•	Por defecto, las horas estimadas serán de 10 horas y entregado false.
-    // El resto de atributos serán valores por defecto según el tipo del atributo.
     //Attributes
     private String titulos = "";
     private int horasEstimadas = 10;
@@ -11,11 +8,7 @@ public class VideoJuego implements Entregable {
     private String genero = "";
     private String compania = "";
 
-    //•	Los constructores que se implementaran serán:
-    //•	Un constructor por defecto.
-    //•	Un constructor con el titulo y horas estimadas. El resto por defecto.
-    //•	Un constructor con todos los atributos, excepto de entregado.
-
+    //Constructor
     public VideoJuego(){
 
     }
@@ -32,13 +25,7 @@ public class VideoJuego implements Entregable {
         this.compania = compania;
     }
 
-    //•	Los métodos que se implementara serán:
-    //•	Métodos get de todos los atributos, excepto de entregado.
-    //•	Métodos set de todos los atributos, excepto de entregado.
-    //•	Sobrescribe los métodos toString.
-
-
-
+    //Methods
     public String getTitulos() {
         return titulos;
     }
@@ -109,4 +96,17 @@ public class VideoJuego implements Entregable {
         }
         return answer;
     }
+
+    /*@Override
+    public int compareTo(Object a) {
+        int valueA = (int)a;
+        int totalTempo = this.horasEstimadas;
+        int answer;
+        if(valueA > totalTempo){
+            answer = valueA;
+        }else {
+            answer=totalTempo;
+        }
+        return answer;
+    }*/
 }
