@@ -1,6 +1,5 @@
 package SeventeenthChallenge;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main3 {
@@ -8,10 +7,9 @@ public class Main3 {
         int totalPriceTele;
         int totalPriceLavadora;
         int totalPriceElectro;
-        int totalPrice;
 
         //Tiene que ser un array de 10 posiciones
-        Electrodomestico electrodomesticos[] = new Electrodomestico[3];
+        Electrodomestico[] electrodomesticos = new Electrodomestico[10];
 
         electrodomesticos[0] = new Electrodomestico(100, "negro", 'A', 100);
         electrodomesticos[1] = new Electrodomestico(100, "azul", 'B', 10);
@@ -27,26 +25,29 @@ public class Main3 {
         totalPriceTele = getTotalPriceTelevision(electrodomesticos);
         totalPriceLavadora = getTotalPriceLavadora(electrodomesticos);
         totalPriceElectro = getTotalPriceElectro(electrodomesticos);
-        totalPrice = totalPriceTele + totalPriceLavadora + totalPriceElectro;
 
-        System.out.println("El precio total por los televisiores es: " + totalPriceTele);
-        System.out.println("El precio total por las lavadoras es: " + totalPriceLavadora);
-        System.out.println("El precio total por otros electrodomésticos es: " + totalPriceElectro);
-        System.out.println("El total es: " + totalPrice);
+        showTotals(totalPriceTele,totalPriceLavadora,totalPriceElectro);
 
     }
 
     private static Integer getTotalPriceElectro(Electrodomestico[] electrodomesticos) {
-        return Arrays.stream(electrodomesticos).filter(x -> x instanceof Electrodomestico).map(x -> x.precioFinal()).reduce(0, (a, b) -> a + b);
+        return Arrays.stream(electrodomesticos).filter(x -> x instanceof Electrodomestico).map(Electrodomestico::precioFinal).reduce(0, Integer::sum);
     }
 
     private static Integer getTotalPriceLavadora(Electrodomestico[] electrodomesticos) {
-        return Arrays.stream(electrodomesticos).filter(x -> x instanceof Lavadora).map(x -> x.precioFinal()).reduce(0, (a, b) -> a + b);
+        return Arrays.stream(electrodomesticos).filter(x -> x instanceof Lavadora).map(Electrodomestico::precioFinal).reduce(0, Integer::sum);
     }
 
     private static Integer getTotalPriceTelevision(Electrodomestico[] electrodomesticos) {
-        return Arrays.stream(electrodomesticos).filter(x -> x instanceof Television).map(x -> x.precioFinal()).reduce(0, (a, b) -> a + b);
+        return Arrays.stream(electrodomesticos).filter(x -> x instanceof Television).map(Electrodomestico::precioFinal).reduce(0, Integer::sum);
     }
 
+    private static void showTotals(int totalPriceTele,int totalPriceLavadora, int totalPriceElectro){
+        int totalPrice = totalPriceTele + totalPriceLavadora + totalPriceElectro;
+        System.out.println("El precio total por los televisiores es: " + totalPriceTele);
+        System.out.println("El precio total por las lavadoras es: " + totalPriceLavadora);
+        System.out.println("El precio total por otros electrodomésticos es: " + totalPriceElectro);
+        System.out.println("El total es: " + totalPrice);
+    }
 
 }
