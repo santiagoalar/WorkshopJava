@@ -2,40 +2,26 @@
 //elimine los espacios que esta contenga.
 package package1;
 
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class TenthChallenge {
 
-/*    public interface Operacion1 {
-        Boolean convert(String char1, String char2);
-    }*/
-
-    public interface Operacion1 {
-        Boolean convert(char string);
-    }
-
     public static void main(String[] args) {
-        //String newPhrase = phrase.replaceAll("\\s+","");
-        //String phrase = "lorem ipsum dolor sit amet consectetur adipiscing elit";
         Scanner entry = new Scanner(System.in);
-
         System.out.println("Enter a phrase in order to remove white spaces: ");
-
         String phrase = entry.nextLine();
-        Operacion1 operacion1 = x->x == ' ';
-        String newPhrase = replaceWhiteSpaces(phrase,operacion1);
-        System.out.println(newPhrase);
+
+        replaceWhiteSpaces(phrase);
     }
 
-    public  static String replaceWhiteSpaces(String text, Operacion1 op){
-        String text2 = "";
-        char letra;
-        for (int i = 0; i < text.length(); i++) {
-            letra = text.charAt(i);
-            if(!op.convert(letra)) {
-                text2+=letra;
-            }
-        }
-        return text2;
+    public  static void replaceWhiteSpaces(String text){
+        List<Character> newText = convertStringToCharList(text);
+        newText.stream().filter(x->x != ' ').forEach(System.out::print);
+    }
+
+    public static List<Character> convertStringToCharList(String str) {
+        return str.chars().mapToObj(e -> (char) e).collect(Collectors.toList());
     }
 }
