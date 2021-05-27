@@ -7,7 +7,7 @@ public class Lavadora extends Electrodomestico {
 
     //Constructor
     public Lavadora() {
-
+        super();
     }
 
     public Lavadora(int precioBase, double peso) {
@@ -26,10 +26,7 @@ public class Lavadora extends Electrodomestico {
 
     @Override
     public int precioFinal() {
-        int precioAddition = 0;
-        if (this.carga > 30) {
-            precioAddition = 50;
-        }
+        int precioAddition = (this.carga > 30)?50:0;
         return super.precioFinal() + precioAddition;
     }
 }
