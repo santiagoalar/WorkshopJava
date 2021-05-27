@@ -7,20 +7,18 @@ package package1;
 import java.util.Scanner;
 
 public class ThirdChallenge {
-    public void areaCircle(){
-        String radiusString;
-        double radiusDouble;
-        Scanner entry = new Scanner(System.in);
-        System.out.println("Enter the radius ");
-        radiusString = entry.nextLine();
-        radiusDouble = Double.parseDouble(radiusString);
-        System.out.println(radiusDouble*Math.PI);
+    public void areaCircle(Double radius) {
+        System.out.println(radius * Math.PI);
     }
 
     public static void main(String[] args) {
+        double radius;
         ThirdChallenge app = new ThirdChallenge();
-        app.areaCircle();
+        Scanner entry = new Scanner(System.in);
+        System.out.println("Enter the radius ");
 
+        radius = entry.nextDouble();
+        app.areaCircle(radius);
     }
 
 }
