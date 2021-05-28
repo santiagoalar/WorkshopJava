@@ -12,7 +12,7 @@ public class Main4 {
         series[0] = new Serie();
         series[1] = new Serie("The Walking Dead", "Frank Darabont",11,"Drama crudo");
         series[2] = new Serie("The Game of Thrones", "D. B. Weiss");
-        series[3] = new Serie("The Last Man on Earth", "Will Forte", 6, "Escenario apocalíptico Comedia");
+        series[3] = new Serie("The Last Man on Earth", "Will Forte", 26, "Escenario apocalíptico Comedia");
         series[4] = new Serie("Lost", "J. J. Abrams Damon Lindelof", 18, "Suspenso y Accion");
 
         videoJuegos[0] = new VideoJuego("grand theft auto: San Andreas", 60);
@@ -31,10 +31,12 @@ public class Main4 {
         returnedElements(series, videoJuegos);
 
         System.out.println("Las serie con mas temporadas es: ");
-        System.out.println(Arrays.stream(series).max(Comparator.comparing(Serie::getNumTemp)).get().toString());
+        //System.out.println(Arrays.stream(series).max(Comparator.comparing(Serie::getNumTemp)).get().toString());
+        System.out.println(Arrays.stream(series).max(Serie::compareTo).get().toString());
 
         System.out.println("El video juego con más horas que tiene más horas estimadas es: ");
-        System.out.println(Arrays.stream(videoJuegos).max(Comparator.comparing(VideoJuego::getHorasEstimadas)).get().toString());
+        //System.out.println(Arrays.stream(videoJuegos).max(Comparator.comparing(VideoJuego::getHorasEstimadas)).get().toString());
+        System.out.println(Arrays.stream(videoJuegos).max((x,y)-> x.compareTo(y)).get().toString());
 
     }
 

@@ -86,27 +86,13 @@ public class VideoJuego implements Entregable {
 
     @Override
     public int compareTo(Object a) {
-        int valueA = (int)a;
-        int totalTempo = this.horasEstimadas;
-        int answer;
-        if(valueA > totalTempo){
-            answer = valueA;
-        }else {
-            answer=totalTempo;
+        VideoJuego videoJuego = (VideoJuego) a;
+        int answer = 0;
+        if (this.horasEstimadas > videoJuego.getHorasEstimadas()){
+            answer = 1;
+        }else if(this.horasEstimadas < videoJuego.getHorasEstimadas()){
+            answer = -1;
         }
         return answer;
     }
-
-    /*@Override
-    public int compareTo(Object a) {
-        int valueA = (int)a;
-        int totalTempo = this.horasEstimadas;
-        int answer;
-        if(valueA > totalTempo){
-            answer = valueA;
-        }else {
-            answer=totalTempo;
-        }
-        return answer;
-    }*/
 }

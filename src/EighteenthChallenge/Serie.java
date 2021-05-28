@@ -84,13 +84,12 @@ public class Serie implements Entregable{
 
     @Override
     public int compareTo(Object a) {
-        int valueA = (int)a;
-        int totalTempo = this.numTemp;
-        int answer;
-        if(valueA > totalTempo){
-            answer = valueA;
-        }else {
-            answer=totalTempo;
+        Serie serie = (Serie) a;
+        int answer = 0;
+        if (this.getNumTemp() > serie.getNumTemp()){
+            answer = 1;
+        }else if(this.getNumTemp() < serie.getNumTemp()){
+            answer = -1;
         }
         return answer;
     }
